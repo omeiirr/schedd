@@ -6,7 +6,7 @@ const ErrorPage = () => {
       <p className='text-4xl '>Page not found</p>
       <ComingSoonIllustration className='mt-16' />
       <Link href='account'>
-        <button className='mt-14 bg-purple-500 shadow-lg shadow-purple-400 rounded-lg px-4 py-2 max-w-xs'>
+        <button className='max-w-xs px-4 py-2 bg-purple-500 rounded-lg shadow-lg mt-14 shadow-purple-400'>
           Go to Home
         </button>
       </Link>
