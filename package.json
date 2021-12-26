@@ -1,5 +1,5 @@
 {
-  "name": "sched",
+  "name": "schedd",
   "private": true,
   "scripts": {
     "dev": "next dev",
