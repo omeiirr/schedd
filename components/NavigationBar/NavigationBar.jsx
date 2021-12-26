@@ -1,6 +1,6 @@
-import Home from '../../assets/icons/MobileBar/Home.svg';
-import School from '../../assets/icons/MobileBar/School.svg';
-import Person from '../../assets/icons/MobileBar/Person.svg';
+import Home from 'assets/icons/MobileBar/Home.svg';
+import School from 'assets/icons/MobileBar/School.svg';
+import Person from 'assets/icons/MobileBar/Person.svg';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 

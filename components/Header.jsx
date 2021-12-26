@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import BackArrow from '../assets/icons/BackArrow.svg';
+import BackArrow from 'assets/icons/BackArrow.svg';
 const Header = ({ title = 'Go back' }) => {
   const router = useRouter();
   return (
