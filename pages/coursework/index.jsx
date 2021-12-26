@@ -1,9 +1,16 @@
+// Components
 import NavigationBar from 'components/NavigationBar/NavigationBar';
-
-import Share from 'assets/icons/Account/Share.svg';
-import Settings from 'assets/icons/Account/Settings.svg';
-import BulletList from 'assets/icons/BulletList.svg';
 import RowItem from 'components/RowItem';
+
+// Icons
+import OpenBook from 'assets/icons/Coursework/OpenBook.svg';
+import Groups from 'assets/icons/Coursework/Groups.svg';
+import Board from 'assets/icons/Coursework/Grades.svg';
+import Calendar from 'assets/icons/Coursework/CalendarToday.svg';
+import ReceiptLong from 'assets/icons/Coursework/ReceiptLong.svg';
+import Hand from 'assets/icons/Coursework/BackHand.svg';
+import Grading from 'assets/icons/Coursework/Grading.svg';
+
 const Coursework = () => {
   const svgConfig = {
     fill: '#a3a3a3',
@@ -12,42 +19,39 @@ const Coursework = () => {
   };
   const options = [
     {
-      icon: <Settings {...svgConfig} />,
+      icon: <OpenBook {...svgConfig} />,
       title: 'My Courses',
-      //   description: 'Manage your account settings',
       link: '/coursework/courses'
     },
     {
-      icon: <Share {...svgConfig} />,
+      icon: <Groups {...svgConfig} />,
       title: 'My Faculty',
-      //   description: 'Invite your friends to collaborate',
       link: '/coursework/faculty'
     },
     {
-      icon: <Settings {...svgConfig} />,
+      icon: <Board {...svgConfig} />,
       title: 'My Grades',
-      //   description: 'Manage your coursework settings',
       link: '/coursework/grades'
     },
     {
-      icon: <Share {...svgConfig} />,
+      icon: <Calendar {...svgConfig} />,
       title: 'Weekly Timetable',
       link: '/coursework/weekly-timetable'
     },
     {
-      icon: <BulletList {...svgConfig} />,
+      icon: <ReceiptLong {...svgConfig} />,
       title: 'Consolidated Syllabus',
       description: 'Syllabus of all your subjects, in one place',
       link: '/coursework/syllabus'
     },
     {
-      icon: <Settings {...svgConfig} />,
+      icon: <Hand {...svgConfig} />,
       title: 'Attendance Estimate',
       description: 'How many classes can you safely miss?',
       link: '/coursework/attendance-estimate'
     },
     {
-      icon: <Share {...svgConfig} />,
+      icon: <Grading {...svgConfig} />,
       title: 'Examination Result',
       description: 'Check the latest results',
       link: '/coursework/latest-results'
