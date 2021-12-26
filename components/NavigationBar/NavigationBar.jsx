@@ -39,7 +39,7 @@ const NavigationBar = () => {
       <div className='flex items-center justify-around gap-2'>
         {options.map((item, idx) => {
           return (
-            <Link href={item.link} key={idx}>
+            <Link href={item.link} key={idx} passHref>
               <div className='flex flex-col items-center flex-1 pt-1 pb-1 border-r-2 cursor-pointer border-gray-300-500'>
                 {router.pathname.includes(item.link) ? (
                   <>

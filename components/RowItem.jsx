@@ -3,7 +3,7 @@ import ChevronRight from '../assets/icons/Account/ChevronRight.svg';
 import { Tag } from './Tags';
 const RowItem = ({ icon, title, tags, description, link }) => {
   return (
-    <Link href={link}>
+    <Link href={link} passHref>
       <div className='flex items-center py-4 border-b-2 cursor-pointer border-b-gray-100'>
         <span>{icon}</span>
         <div className='ml-4'>
