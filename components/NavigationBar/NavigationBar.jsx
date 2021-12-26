@@ -21,8 +21,8 @@ const options = [
   {
     logo: <School {...svgConfig} />,
     activeLogo: <School {...svgConfig} fill='#000' />,
-    text: 'Toolbar',
-    link: '/toolbar'
+    text: 'Coursework',
+    link: '/coursework'
   },
   {
     logo: <Person {...svgConfig} />,
@@ -35,7 +35,7 @@ const options = [
 const NavigationBar = () => {
   const router = useRouter();
   return (
-    <div className='sticky bottom-0 left-0 right-0 w-full max-w-screen-sm py-2 bg-white shadow-above'>
+    <div className='sticky bottom-0 w-full max-w-screen-sm py-2 bg-white shadow-above'>
       <div className='flex items-center justify-around gap-2'>
         {options.map((item, idx) => {
           return (
