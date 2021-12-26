@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
     <Store>
       <Head>
         <title>Sched</title>
-        <meta name="description" content="An app to keep your university schedule on track" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='An app to keep your university schedule on track' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <ChakraProvider>
         <Component {...pageProps} />
