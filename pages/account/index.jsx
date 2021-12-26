@@ -123,6 +123,7 @@ const Account = () => {
             <a
               href='https://twitter.com/omeiirr'
               target='_blank'
+              rel='noreferrer'
               className='pl-1 font-semibold text-blue-600 underline from-blue-50 decoration-dotted decoration-blue-500 of'
             >
               Omeir {''}

@@ -53,7 +53,7 @@ const Contribute = () => {
         >
           {contributors.map((contributor, idx) => (
             <div key={idx}>
-              <a href={contributor.url} target='_blank'>
+              <a href={contributor.url} target='_blank' rel='noreferrer'>
                 <SkeletonCircle isLoaded={isLoaded} width={80} height={80}>
                   <img
                     src={contributor.avatarUrl}
