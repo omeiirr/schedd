@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const svgConfig = {
-  height: '30px',
-  width: '30px',
+  height: '28px',
+  width: '28px',
   fill: 'transparent',
   stroke: '#000'
 };
@@ -35,7 +35,7 @@ const options = [
 const NavigationBar = () => {
   const router = useRouter();
   return (
-    <div className='sticky bottom-0 w-full max-w-screen-sm py-2 bg-white shadow-above'>
+    <div className='sticky bottom-0 w-full max-w-screen-sm py-1 bg-white shadow-above'>
       <div className='flex items-center justify-around gap-2'>
         {options.map((item, idx) => {
           return (
@@ -44,12 +44,12 @@ const NavigationBar = () => {
                 {router.pathname.includes(item.link) ? (
                   <>
                     <p> {item.activeLogo} </p>
-                    <p className='font-semibold'> {item.text} </p>
+                    <p className='text-sm font-semibold'> {item.text} </p>
                   </>
                 ) : (
                   <>
                     <p> {item.logo} </p>
-                    <p className='font-normal'> {item.text} </p>
+                    <p className='text-sm font-normal'> {item.text} </p>
                   </>
                 )}
               </div>
