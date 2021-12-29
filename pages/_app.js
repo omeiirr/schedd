@@ -1,8 +1,24 @@
 import { Store } from '../store';
 import Head from 'next/head';
 import '../styles/index.css';
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+
+        .then((resgistration) => {
+          console.log('SW registered succesfully', resgistration);
+        })
+
+        .catch((err) => {
+          console.log('SW registration failed', err);
+        });
+    }
+  }, []);
+
   return (
     <Store>
       <Head>
