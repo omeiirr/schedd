@@ -1,0 +1,22 @@
+{
+  "name": "Schedd",
+  "short_name": "Schedd",
+  "start_url": "/account",
+  "display": "standalone",
+  "background_color": "#3490DE",
+  "theme_color": "#3490DE",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logo-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+
+    {
+      "src": "/logo-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
