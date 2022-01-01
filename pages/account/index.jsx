@@ -19,6 +19,9 @@ import RowItem from 'components/RowItem';
 // Libraries
 import axios from 'axios';
 
+// Functions
+import shareLink from 'functions/shareLink';
+
 const svgConfig = {
   fill: '#a3a3a3',
   height: '28px',
@@ -50,7 +53,7 @@ const Account = () => {
       icon: <Share {...svgConfig} />,
       title: 'Share with friends',
       description: 'Invite your friends to collaborate',
-      link: '/account/share'
+      handleClick: () => shareLink()
     },
     {
       icon: <Git {...svgConfig} />,
