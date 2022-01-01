@@ -48,7 +48,7 @@ const LectureCard = ({
         currentlyOngoing && colors[attendanceStatus].shadow
       }`}
     >
-      <div className='max-w-[240px] sm:max-w-[340px]'>
+      <div className='max-w-[220px] sm:max-w-[340px]'>
         <h5
           className={`text-gray-800 font-semibold overflow-hidden text-ellipsis whitespace-nowrap`}
         >
