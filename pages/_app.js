@@ -27,9 +27,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Store>
-      <Head>
-        <title>Schedd</title>
-      </Head>
       <div className=' sm:bg-cyan-900'>
         <div className='max-w-screen-sm sm:mx-auto sm:my-auto sm:bg-white sm:min-h-screen sm:shadow-md sm:shadow-white'>
           <Component {...pageProps} />

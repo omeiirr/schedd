@@ -1,4 +1,5 @@
 // Components
+import Head from 'next/head';
 import NavigationBar from 'components/NavigationBar/NavigationBar';
 import RowItem from 'components/RowItem';
 
@@ -59,28 +60,33 @@ const Coursework = () => {
   ];
 
   return (
-    <div className='flex flex-col h-screen'>
-      <header className='p-4 sm:p-8'>
-        <h4 className='text-3xl font-medium font-heading '>My Coursework</h4>
-        <p className='text-gray-400 text-md'>B.Tech CSE</p>
-      </header>
-      <main className='flex-1 p-4 pt-0 sm:px-8'>
-        {options.map((item, idx) => {
-          //   console.log(item);
-          return (
-            <RowItem
-              key={idx}
-              icon={item.icon}
-              title={item.title}
-              tags={item.tags}
-              description={item.description}
-              link={item.link}
-            />
-          );
-        })}
-      </main>
-      <NavigationBar />
-    </div>
+    <>
+      <Head>
+        <title>Coursework - Schedd</title>
+      </Head>
+      <div className='flex flex-col h-screen'>
+        <header className='p-4 sm:p-8'>
+          <h4 className='text-3xl font-medium font-heading '>My Coursework</h4>
+          <p className='text-gray-400 text-md'>B.Tech CSE</p>
+        </header>
+        <main className='flex-1 p-4 pt-0 sm:px-8'>
+          {options.map((item, idx) => {
+            //   console.log(item);
+            return (
+              <RowItem
+                key={idx}
+                icon={item.icon}
+                title={item.title}
+                tags={item.tags}
+                description={item.description}
+                link={item.link}
+              />
+            );
+          })}
+        </main>
+        <NavigationBar />
+      </div>
+    </>
   );
 };
 

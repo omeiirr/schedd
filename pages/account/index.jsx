@@ -12,6 +12,7 @@ import InstallMobile from 'assets/icons/Account/InstallMobile.svg';
 import Logout from 'assets/icons/Account/Logout.svg';
 
 // Components
+import Head from 'next/head';
 import NavigationBar from 'components/NavigationBar/NavigationBar';
 import RowItem from 'components/RowItem';
 
@@ -97,42 +98,47 @@ const Account = () => {
   ];
 
   return (
-    <div className='h-screen'>
-      <header className='p-4 sm:p-8'>
-        <h4 className='text-3xl font-medium font-heading '>Omeir Fawaz</h4>
-        <p className='text-gray-400 text-md'>B.Tech CSE</p>
-      </header>
-      <main className='p-4 pt-0 sm:px-8'>
-        {options.map((item, idx) => {
-          return (
-            <RowItem
-              key={idx}
-              icon={item.icon}
-              title={item.title}
-              tags={item.tags}
-              description={item.description}
-              link={item.link}
-            />
-          );
-        })}
+    <>
+      <Head>
+        <title>Account - Schedd</title>
+      </Head>
+      <div className='h-screen'>
+        <header className='p-4 sm:p-8'>
+          <h4 className='text-3xl font-medium font-heading '>Omeir Fawaz</h4>
+          <p className='text-gray-400 text-md'>B.Tech CSE</p>
+        </header>
+        <main className='p-4 pt-0 sm:px-8'>
+          {options.map((item, idx) => {
+            return (
+              <RowItem
+                key={idx}
+                icon={item.icon}
+                title={item.title}
+                tags={item.tags}
+                description={item.description}
+                link={item.link}
+              />
+            );
+          })}
 
-        <div className='flex justify-between mt-6'>
-          <span>App version: {appVersion}</span>
-          <span>
-            Made by
-            <a
-              href='https://twitter.com/omeiirr'
-              target='_blank'
-              rel='noreferrer'
-              className='pl-1 font-semibold text-blue-600 underline from-blue-50 decoration-dotted decoration-blue-500 of'
-            >
-              Omeir {''}
-            </a>
-          </span>
-        </div>
-      </main>
-      <NavigationBar />
-    </div>
+          <div className='flex justify-between mt-6'>
+            <span>App version: {appVersion}</span>
+            <span>
+              Made by
+              <a
+                href='https://twitter.com/omeiirr'
+                target='_blank'
+                rel='noreferrer'
+                className='pl-1 font-semibold text-blue-600 underline from-blue-50 decoration-dotted decoration-blue-500 of'
+              >
+                Omeir {''}
+              </a>
+            </span>
+          </div>
+        </main>
+        <NavigationBar />
+      </div>
+    </>
   );
 };
 
