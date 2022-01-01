@@ -2,13 +2,12 @@ import { Store } from '../store';
 import Head from 'next/head';
 import '../styles/index.css';
 import { useEffect } from 'react';
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     // Add Google Analytics
     ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID);
-    ReactGA.pageview(window.location.pathname + window.location.search); // report page view
 
     // Register service worker
     if ('serviceWorker' in navigator) {
