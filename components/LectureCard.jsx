@@ -65,7 +65,7 @@ const LectureCard = ({
       {
         <div className='flex flex-col bg'>
           {(attendanceStatus === 'Unmarked' || attendanceStatus === 'default') && (
-            <p className='flex items-center gap-2 text-sm font-semibold text-green-500'>
+            <p className='flex items-center gap-2 text-sm font-semibold text-green-500 '>
               <TrendingUp {...svgConfig} className='fill-green-500' /> {posImpact} %
             </p>
           )}

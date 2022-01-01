@@ -80,12 +80,12 @@ const Home = () => {
       </Head>
       <div className='h-screen' style={{ boxSizing: 'border-box' }}>
         <header className='p-4 sm:p-8'>
-          <p className='text-gray-600 text-lg'>Hi Omeir 👋</p>
+          <p className='text-lg text-gray-600'>Hi Omeir 👋</p>
           <h4 className='text-2xl font-medium font-heading '>{dateToDisplay}</h4>
         </header>
-        <main className='p-4 pt-0 sm:px-8 h-full '>
-          <div className='flex items-center justify-between mb-2 mt-4'>
-            <h4 className='text-2xl font-heading font-medium '>Schedule</h4>
+        <main className='h-full p-4 pt-0 sm:px-8 '>
+          <div className='flex items-center justify-between mt-4 mb-2'>
+            <h4 className='text-2xl font-medium font-heading '>Schedule</h4>
 
             <div className='flex items-center gap-1'>
               <p className='text-sm'>Updated today, 3:26 PM</p>
