@@ -117,6 +117,7 @@ const Account = () => {
                 tags={item.tags}
                 description={item.description}
                 link={item.link}
+                handleClick={item.handleClick}
               />
             );
           })}
