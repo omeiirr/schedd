@@ -48,7 +48,7 @@ const LectureCard = ({
         currentlyOngoing && colors[attendanceStatus].shadow
       }`}
     >
-      <div className='max-w-[220px] sm:max-w-[340px]'>
+      <div className='min-w-0 '>
         <h5
           className={`text-gray-800 font-semibold overflow-hidden text-ellipsis whitespace-nowrap`}
         >
@@ -63,7 +63,7 @@ const LectureCard = ({
       </div>
 
       {
-        <div className='flex flex-col bg'>
+        <div className='flex flex-col whitespace-nowrap'>
           {(attendanceStatus === 'Unmarked' || attendanceStatus === 'default') && (
             <p className='flex items-center gap-2 text-sm font-semibold text-green-500 '>
               <TrendingUp {...svgConfig} className='fill-green-500' /> {posImpact} %
