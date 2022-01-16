@@ -12,4 +12,7 @@
   .card-tag {
     @apply px-2 py-[2px] ml-2 text-[12px] font-medium text-center rounded-2xl;
   }
+  .external-link {
+    @apply font-semibold text-blue-600 underline decoration-dotted decoration-blue-600;
+  }
 }
