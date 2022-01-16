@@ -2,7 +2,7 @@ import RandomAvatar from 'components/RandomAvatar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import LogoText from '../public/LogoText.svg';
+import LogoText from 'public/LogoWithText.svg';
 const Login = () => {
   const [userCredentials, setUserCredentials] = useState({
     username: '',
