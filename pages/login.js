@@ -1,8 +1,11 @@
 import RandomAvatar from 'components/RandomAvatar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import LogoText from 'public/LogoWithText.svg';
+
+import ReactGA from 'react-ga4';
+
 const Login = () => {
   const [userCredentials, setUserCredentials] = useState({
     username: '',
@@ -22,6 +25,10 @@ const Login = () => {
     localStorage.setItem('avatarUrl', avatar);
 
     router.push('/home');
+
+    ReactGA.event('login__loginDemoUser', {
+      event_category: 'USER'
+    });
   };
 
   const login = (e) => {
@@ -30,7 +37,17 @@ const Login = () => {
     localStorage.setItem('password', userCredentials.password);
     localStorage.setItem('avatarUrl', avatar);
     router.push('/home');
+
+    ReactGA.event('login__loginActualUser', {
+      event_category: 'USER'
+    });
   };
+
+  useEffect(() => {
+    ReactGA.event('login__refreshAvatar', {
+      event_category: 'USER'
+    });
+  }, [avatar]);
 
   return (
     <>
@@ -79,6 +96,11 @@ const Login = () => {
                   target='_blank'
                   rel='noreferrer'
                   className='text-xs text-gray-600 hover:underline'
+                  onClick={() =>
+                    ReactGA.event('login__forgotPassword', {
+                      event_category: 'USER'
+                    })
+                  }
                 >
                   Forgot Password?
                 </a>
