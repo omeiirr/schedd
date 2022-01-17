@@ -146,12 +146,12 @@ export default function Home() {
 
           <div className='flex items-center justify-between max-w-sm gap-4 mt-6 '>
             <Link href='/login'>
-              <button className='flex items-center w-full px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600'>
+              <button className='flex items-center w-full px-6 py-3 text-gray-500 bg-gray-100 rounded-md shadow-below hover:bg-gray-200 hover:text-gray-600'>
                 Try a Demo
               </button>
             </Link>
             <Link href='/login'>
-              <button className='flex items-center w-full px-6 py-3 text-center text-white bg-blue-600 rounded-md sm:mb-0 hover:bg-blue-700'>
+              <button className='flex items-center w-full px-6 py-3 text-center text-white bg-blue-600 rounded-md shadow-below shadow-blue-600 sm:mb-0 hover:bg-blue-700'>
                 Get Started
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -175,15 +175,15 @@ export default function Home() {
         <div className='flex items-center w-full h-auto gap-4 px-4 pb-6 mt-4 overflow-hidden overflow-x-scroll '>
           <img
             src='https://pbs.twimg.com/media/FIDK3gIUUAA650x?format=jpg&name=medium'
-            className='border-2 shadow-lg h-96 rounded-2xl w-60'
+            className='border-2 shadow-below h-96 rounded-2xl w-60'
           />
           <img
             src='https://pbs.twimg.com/media/FIDFei7VkAAJh8J?format=jpg&name=medium'
-            className='border-2 shadow-lg h-96 rounded-2xl w-60'
+            className='border-2 shadow-below h-96 rounded-2xl w-60'
           />
           <img
             src='https://pbs.twimg.com/media/FIDF4kgVEAAZnZ_?format=jpg&name=medium'
-            className='border-2 shadow-lg h-96 rounded-2xl w-60'
+            className='border-2 shadow-below h-96 rounded-2xl w-60'
           />
         </div>
       </div>
@@ -231,7 +231,7 @@ export default function Home() {
 
 const FeatureBox = ({ icon, title, desc }) => {
   return (
-    <div className='relative flex flex-col items-center justify-start col-span-6 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-xl'>
+    <div className='relative flex flex-col items-center justify-start col-span-6 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 shadow-md rounded-xl'>
       <div className='p-3 text-white bg-blue-500 rounded-full'>{icon}</div>
       <h4 className='text-xl font-medium text-gray-700'>{title}</h4>
       <p className='text-base text-center text-gray-500'>{desc}</p>
