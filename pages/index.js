@@ -17,6 +17,8 @@ import LinkedIn from 'assets/icons/LandingPage/LinkedIn.svg';
 import Mail from 'assets/icons/LandingPage/Mail.svg';
 // import Globe from 'assets/icons/LandingPage/Globe.svg';
 
+import ReactGA from 'react-ga4';
+
 export default function Home() {
   const [headerShadow, setHeaderShadow] = useState(false);
   const [showCTA, setShowCTA] = useState(false);
@@ -64,23 +66,43 @@ export default function Home() {
   const socialLinks = [
     {
       link: 'https://twitter.com/omeiirr',
-      icon: <Twitter width={24} height={24} />
+      icon: <Twitter width={24} height={24} />,
+      handleClick: () =>
+        ReactGA.event('landing__twitterHandle', {
+          event_category: 'USER'
+        })
     },
     {
       link: 'https://github.com/omeiirr',
-      icon: <GitHub width={24} height={24} />
+      icon: <GitHub width={24} height={24} />,
+      handleClick: () =>
+        ReactGA.event('landing__githubHandle', {
+          event_category: 'USER'
+        })
     },
     {
       link: 'https://linkedin.com/in/omeir-fawaz',
-      icon: <LinkedIn width={24} height={24} />
+      icon: <LinkedIn width={24} height={24} />,
+      handleClick: () =>
+        ReactGA.event('landing__linkedinHandle', {
+          event_category: 'USER'
+        })
     },
     {
       link: 'mailto:omeirf.02@gmail.com',
-      icon: <Mail width={24} height={24} />
+      icon: <Mail width={24} height={24} />,
+      handleClick: () =>
+        ReactGA.event('landing__emailHandle', {
+          event_category: 'USER'
+        })
     }
     // {
     //   link: 'https://omeiirr.github.io/Portfolio',
-    //   icon: <Globe width={24} height={24} />
+    //   icon: <Globe width={24} height={24} />,
+    //   handleClick: () =>
+    //     ReactGA.event('landing__portfolioHandle', {
+    //       event_category: 'USER'
+    //     })
     // }
   ];
 
@@ -110,23 +132,31 @@ export default function Home() {
         <LogoWithText
           className='cursor-pointer '
           width={100}
-          onClick={() =>
+          onClick={() => {
             document.documentElement.scrollTo({
               top: 0,
               behavior: 'smooth'
-            })
-          }
+            });
+            ReactGA.event('landing__logoClick', {
+              event_category: 'USER'
+            });
+          }}
         />
         <div
           className={`
           flex items-center justify-between max-w-sm gap-4 transition-all duration-200 
-           ${!showCTA ? 'opacity-0' : 'opacity-100'} 
+          ${!showCTA ? 'opacity-0' : 'opacity-100'} 
           `}
         >
           <Link href='/login'>
             <button
               className='flex items-center w-full px-3 py-2 text-center text-white bg-blue-600 rounded-md sm:mb-0 hover:bg-blue-700'
               disabled={!showCTA}
+              onClick={() => {
+                ReactGA.event('landing__loginWithAmizone', {
+                  event_category: 'USER'
+                });
+              }}
             >
               Login with Amizone
             </button>
@@ -146,12 +176,26 @@ export default function Home() {
 
           <div className='flex items-center justify-between max-w-sm gap-4 mt-6 '>
             <Link href='/login'>
-              <button className='flex items-center w-full px-6 py-3 text-gray-500 bg-gray-100 rounded-md shadow-below hover:bg-gray-200 hover:text-gray-600'>
+              <button
+                className='flex items-center w-full px-6 py-3 text-gray-500 bg-gray-100 rounded-md shadow-below hover:bg-gray-200 hover:text-gray-600'
+                onClick={() => {
+                  ReactGA.event('landing__tryDemo', {
+                    event_category: 'USER'
+                  });
+                }}
+              >
                 Try a Demo
               </button>
             </Link>
             <Link href='/login'>
-              <button className='flex items-center w-full px-6 py-3 text-center text-white bg-blue-600 rounded-md shadow-below shadow-blue-600 sm:mb-0 hover:bg-blue-700'>
+              <button
+                className='flex items-center w-full px-6 py-3 text-center text-white bg-blue-600 rounded-md shadow-below shadow-blue-600 sm:mb-0 hover:bg-blue-700'
+                onClick={() => {
+                  ReactGA.event('landing__getStarted', {
+                    event_category: 'USER'
+                  });
+                }}
+              >
                 Get Started
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -218,6 +262,7 @@ export default function Home() {
                 className='text-gray-400 hover:text-gray-500'
                 target='_blank'
                 rel='noreferrer'
+                onClick={platform.handleClick}
               >
                 <span className='w-6 h-6'>{platform.icon}</span>
               </a>
