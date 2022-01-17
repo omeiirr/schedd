@@ -148,7 +148,7 @@ export default function Home() {
           ${!showCTA ? 'opacity-0' : 'opacity-100'} 
           `}
         >
-          <Link href='/login'>
+          <Link href='/login' passHref>
             <button
               className='flex items-center w-full px-3 py-2 text-center text-white bg-blue-600 rounded-md sm:mb-0 hover:bg-blue-700'
               disabled={!showCTA}
@@ -175,7 +175,7 @@ export default function Home() {
           </p>
 
           <div className='flex items-center justify-between max-w-sm gap-4 mt-6 '>
-            <Link href='/login'>
+            <Link href='/login' passHref>
               <button
                 className='flex items-center w-full px-6 py-3 text-gray-500 bg-gray-100 rounded-md shadow-below hover:bg-gray-200 hover:text-gray-600'
                 onClick={() => {
@@ -187,7 +187,7 @@ export default function Home() {
                 Try a Demo
               </button>
             </Link>
-            <Link href='/login'>
+            <Link href='/login' passHref>
               <button
                 className='flex items-center w-full px-6 py-3 text-center text-white bg-blue-600 rounded-md shadow-below shadow-blue-600 sm:mb-0 hover:bg-blue-700'
                 onClick={() => {
