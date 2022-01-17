@@ -51,6 +51,7 @@ const RandomAvatar = ({ setAvatar }) => {
     <div className='flex flex-col items-center '>
       <img
         src={avatarLink}
+        alt='avatar'
         onClick={generateRandomSeed}
         width={60}
         height={60}

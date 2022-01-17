@@ -220,14 +220,17 @@ export default function Home() {
           <img
             src='https://pbs.twimg.com/media/FIDK3gIUUAA650x?format=jpg&name=medium'
             className='border-2 shadow-below h-96 rounded-2xl w-60'
+            alt='demonstration_slide1'
           />
           <img
             src='https://pbs.twimg.com/media/FIDFei7VkAAJh8J?format=jpg&name=medium'
             className='border-2 shadow-below h-96 rounded-2xl w-60'
+            alt='demonstration_slide2'
           />
           <img
             src='https://pbs.twimg.com/media/FIDF4kgVEAAZnZ_?format=jpg&name=medium'
             className='border-2 shadow-below h-96 rounded-2xl w-60'
+            alt='demonstration_slide3'
           />
         </div>
       </div>
