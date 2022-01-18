@@ -1,55 +1,67 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+
+// Components
 import NavigationBar from 'components/NavigationBar/NavigationBar';
 import LectureCard from 'components/LectureCard';
 import Refresh from '/assets/icons/Home/Refresh.svg';
 import { ChakraProvider, Skeleton } from '@chakra-ui/react';
+
+// Functions
+import getAttendanceStatus from 'functions/Home/getAttendanceStatus';
+import getAttendanceInsights from 'functions/Home/getAttendanceInsights';
+
+// Libraries
+import axios from 'axios';
 import ReactGA from 'react-ga4';
-import Head from 'next/head';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 const Home = () => {
-  const [lectures, setLectures] = useState([]);
+  const [lectures, setLectures] = useState([{}, {}, {}, {}, {}, {}]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [scheduleUpdatedAt, setScheduleUpdatedAt] = useState(new Date());
   const fetchDailySchedule = () => {
     setIsLoaded(false);
 
-    setTimeout(() => {
-      setLectures([
-        {
-          attendanceStatus: 'Present',
-          lectureName: 'Discrete Mathematics',
-          from: '10:15',
-          to: '11:10',
-          room: 'E3-G10',
-          currentAttendance: '96.8'
-        },
-        {
-          attendanceStatus: 'Absent',
-          lectureName: 'Cloud Computing',
-          from: '11:15',
-          to: '12:10',
-          room: 'E3-G10',
-          currentAttendance: '92.4'
-        },
-        {
-          attendanceStatus: 'Present',
-          lectureName: '[CSE303] Analysis and Design of Algorithms',
-          from: '1:10',
-          to: '2:15',
-          room: 'E3-G10',
-          currentAttendance: '89.2'
-        },
-        {
-          lectureName: '[IT404] Operating Systems',
-          from: '4:10',
-          to: '5:15',
-          room: 'E3-G10',
-          currentAttendance: '94.9',
-          posImpact: '95.3',
-          negImpact: '94.1'
-        }
-      ]);
-      setIsLoaded(true);
-    }, 500);
+    axios
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}/schedule/today`, {
+        username: localStorage.getItem('username'),
+        password: localStorage.getItem('password')
+      })
+
+      .then((res) => {
+        // console.log(res.data);
+
+        let tempLecturesArray = [];
+
+        res.data.map((lecture, idx) => {
+          let tempLectureObj = {
+            attendanceStatus: getAttendanceStatus(lecture.attendanceColor),
+            lectureName: lecture.courseTitle,
+            from: lecture.start,
+            to: lecture.end,
+            room: lecture.roomNumber,
+            currentAttendance: getAttendanceInsights(
+              lecture.attendance.attended,
+              lecture.attendance.total
+            )['currentAttendance'],
+            posImpact: getAttendanceInsights(lecture.attendance.attended, lecture.attendance.total)[
+              'potentialIncrease'
+            ],
+            negImpact: getAttendanceInsights(lecture.attendance.attended, lecture.attendance.total)[
+              'potentialDecrease'
+            ]
+          };
+          tempLecturesArray.push(tempLectureObj);
+        });
+        setLectures(tempLecturesArray);
+        setIsLoaded(true);
+        setScheduleUpdatedAt(new Date());
+      })
+
+      .catch((err) => console.log(err));
 
     ReactGA.event('fetch_daily_schedule', {
       event_category: 'USER'
