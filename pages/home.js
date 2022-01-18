@@ -105,7 +105,7 @@ const Home = () => {
       <Head>
         <title>Home - Schedd</title>
       </Head>
-      <div className='h-screen' style={{ boxSizing: 'border-box' }}>
+      <div>
         <header className='p-4 sm:p-8'>
           <p className='text-lg text-gray-600'>Hi Omeir 👋</p>
           <h4 className='text-2xl font-medium font-heading '>{dateToDisplay}</h4>
