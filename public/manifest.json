@@ -1,7 +1,7 @@
 {
   "name": "Schedd",
   "short_name": "Schedd",
-  "start_url": "/account",
+  "start_url": "/home",
   "display": "standalone",
   "background_color": "#3490DE",
   "theme_color": "#3490DE",
