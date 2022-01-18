@@ -22,6 +22,8 @@ const Home = () => {
   const [lectures, setLectures] = useState([{}, {}, {}, {}, {}, {}]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [scheduleUpdatedAt, setScheduleUpdatedAt] = useState(new Date());
+  const [timeLapsed, setTimeLapsed] = useState(null);
+
   const fetchDailySchedule = () => {
     setIsLoaded(false);
 
@@ -85,6 +87,19 @@ const Home = () => {
     width: '20px'
   };
 
+  useEffect(() => {
+    setTimeLapsed(dayjs(scheduleUpdatedAt).fromNow());
+  }, [scheduleUpdatedAt]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLapsed(dayjs(scheduleUpdatedAt).fromNow());
+
+      console.log('interval');
+    }, 1000 * 60); // every minute
+    return () => clearInterval(timer);
+  });
+
   return (
     <>
       <Head>
@@ -100,7 +115,7 @@ const Home = () => {
             <h4 className='text-2xl font-medium font-heading '>Schedule</h4>
 
             <div className='flex items-center gap-1'>
-              <p className='text-sm'>Updated today, 3:26 PM</p>
+              <p className='text-sm'>Updated {timeLapsed}</p>
               <Refresh
                 {...svgConfig}
                 onClick={() => {
