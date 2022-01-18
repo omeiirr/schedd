@@ -14,13 +14,13 @@ dayjs.extend(IsBetween);
 
 const LectureCard = ({
   attendanceStatus = 'Unmarked',
-  lectureName = 'Cloud Computing',
-  from = '10:15',
-  to = '11:10',
-  room = 'E3-G10',
-  currentAttendance = '96.8',
-  posImpact = '97.3',
-  negImpact = '96.3'
+  lectureName,
+  from,
+  to,
+  room,
+  currentAttendance,
+  posImpact,
+  negImpact
 }) => {
   const svgConfig = {
     // fill: '#000',
