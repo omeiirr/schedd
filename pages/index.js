@@ -150,7 +150,7 @@ export default function Home() {
         >
           <Link href='/login' passHref>
             <button
-              className='flex items-center w-full px-3 py-2 text-center text-white bg-primary-600 rounded-md sm:mb-0 hover:bg-primary-700'
+              className='flex items-center w-full px-3 py-2 text-center text-white transition-all duration-200 rounded-md bg-primary-600 sm:mb-0 hover:bg-primary-700 '
               disabled={!showCTA}
               onClick={() => {
                 ReactGA.event('landing__loginWithAmizone', {
@@ -177,7 +177,7 @@ export default function Home() {
           <div className='flex items-center justify-between max-w-sm gap-4 mt-6 '>
             <Link href='/login' passHref>
               <button
-                className='flex items-center w-full px-6 py-3 text-gray-500 bg-gray-100 rounded-md shadow-below hover:bg-gray-200 hover:text-gray-600'
+                className='flex items-center w-full px-6 py-3 text-gray-500 transition-all duration-200 bg-gray-100 rounded-md shadow-below hover:bg-gray-200 hover:text-gray-600'
                 onClick={() => {
                   ReactGA.event('landing__tryDemo', {
                     event_category: 'USER'
@@ -189,7 +189,7 @@ export default function Home() {
             </Link>
             <Link href='/login' passHref>
               <button
-                className='flex items-center w-full px-6 py-3 text-center text-white  rounded-md shadow-below bg-primary-600 shadow-primary-600 sm:mb-0 hover:bg-primary-700'
+                className='flex items-center w-full px-6 py-3 text-center text-white transition-all duration-200 rounded-md shadow-below bg-primary-600 shadow-primary-600 sm:mb-0 hover:bg-primary-700'
                 onClick={() => {
                   ReactGA.event('landing__getStarted', {
                     event_category: 'USER'
@@ -280,7 +280,7 @@ export default function Home() {
 const FeatureBox = ({ icon, title, desc }) => {
   return (
     <div className='relative flex flex-col items-center justify-start col-span-6 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 shadow-md rounded-xl'>
-      <div className='p-3 text-white bg-primary-600 rounded-full'>{icon}</div>
+      <div className='p-3 text-white rounded-full bg-primary-600'>{icon}</div>
       <h4 className='text-xl font-medium text-gray-700'>{title}</h4>
       <p className='text-base text-center text-gray-500'>{desc}</p>
     </div>
