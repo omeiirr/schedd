@@ -119,11 +119,15 @@ const Home = () => {
               <Refresh
                 {...svgConfig}
                 onClick={() => {
-                  fetchDailySchedule();
-                  ReactGA.event('refresh_daily_schedule', {
-                    event_category: 'USER'
-                    // event_label: "name",
-                  });
+                  // don't allow to fire function if previous request is not finished
+                  if (isLoaded) {
+                    setIsLoaded(false);
+                    fetchDailySchedule();
+                    ReactGA.event('refresh_daily_schedule', {
+                      event_category: 'USER'
+                      // event_label: "name",
+                    });
+                  }
                 }}
                 className='cursor-pointer'
               />
