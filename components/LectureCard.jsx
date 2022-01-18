@@ -74,7 +74,8 @@ const LectureCard = ({
           {lectureName}
         </h5>
         <p className={`text-gray-800 flex items-center gap-2 `}>
-          <Clock {...svgConfig} /> {from} - {to} AM
+          <Clock {...svgConfig} />
+          {dayjs(from).format('h:mm')} - {dayjs(to).format('h:mm A')}
         </p>
         <p className={` text-gray-800 flex items-center gap-2 `}>
           <Location {...svgConfig} /> {room}
