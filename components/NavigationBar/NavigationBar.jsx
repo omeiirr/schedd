@@ -7,26 +7,26 @@ import Link from 'next/link';
 const svgConfig = {
   height: '28px',
   width: '28px',
-  fill: 'transparent',
+  fill: '#000',
   stroke: '#000'
 };
 
 const options = [
   {
     logo: <Home {...svgConfig} />,
-    activeLogo: <Home {...svgConfig} fill='#000' />,
+    activeLogo: <Home {...svgConfig} className='stroke-primary-600 fill-primary-600' />,
     text: 'Home',
     link: '/home'
   },
   {
     logo: <School {...svgConfig} />,
-    activeLogo: <School {...svgConfig} fill='#000' />,
+    activeLogo: <School {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
     text: 'Coursework',
     link: '/coursework'
   },
   {
     logo: <Person {...svgConfig} />,
-    activeLogo: <Person {...svgConfig} fill='#000' />,
+    activeLogo: <Person {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
     text: 'Account',
     link: '/account'
   }
@@ -44,7 +44,7 @@ const NavigationBar = () => {
                 {router.pathname.includes(item.link) ? (
                   <>
                     <p> {item.activeLogo} </p>
-                    <p className='text-sm font-semibold'> {item.text} </p>
+                    <p className='text-sm font-semibold text-primary-600 '> {item.text} </p>
                   </>
                 ) : (
                   <>
