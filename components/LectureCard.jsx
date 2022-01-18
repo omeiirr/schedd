@@ -1,8 +1,16 @@
+import { useState, useEffect } from 'react';
+
+// Icons
 import Location from 'assets/icons/Home/Location.svg';
 import Clock from 'assets/icons/Home/Clock.svg';
 import TrendingUp from 'assets/icons/Home/TrendingUp.svg';
 import BarChart from 'assets/icons/Home/BarChart.svg';
 import TrendingDown from 'assets/icons/Home/TrendingDown.svg';
+
+// Libraries
+import dayjs from 'dayjs';
+import IsBetween from 'dayjs/plugin/isBetween';
+dayjs.extend(IsBetween);
 
 const LectureCard = ({
   attendanceStatus = 'Unmarked',
@@ -38,14 +46,25 @@ const LectureCard = ({
     }
   };
 
-  const currentlyOngoing = true; // to customise card according to current time
+  const [isCurrentlyOngoing, setIsCurrentlyOngoing] = useState(false);
+
+  useEffect(() => {
+    setIsCurrentlyOngoing(dayjs().isBetween(from, to)); // to customise card according to current time
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIsCurrentlyOngoing(dayjs().isBetween(from, to)); // to customise card according to current time
+    }, 1000 * 60); // every minute
+    return () => clearInterval(timer);
+  });
 
   return (
     <div
       className={`flex justify-between items-center mb-5 rounded-lg p-4 border-l-8 ${
         colors[attendanceStatus].bg
       }  ${colors[attendanceStatus].border}  ${
-        currentlyOngoing && colors[attendanceStatus].shadow
+        isCurrentlyOngoing && colors[attendanceStatus].shadow
       }`}
     >
       <div className='min-w-0 '>
