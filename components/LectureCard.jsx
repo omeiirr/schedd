@@ -66,15 +66,20 @@ const LectureCard = ({
         <div className='flex flex-col whitespace-nowrap'>
           {(attendanceStatus === 'Unmarked' || attendanceStatus === 'default') && (
             <p className='flex items-center gap-2 text-sm font-semibold text-green-500 '>
-              <TrendingUp {...svgConfig} className='fill-green-500' /> {posImpact} %
+              <TrendingUp {...svgConfig} className='fill-green-500' />
+              {posImpact === 100 ? 100 : parseFloat(posImpact).toFixed(1)}%
             </p>
           )}
-          <p className='flex items-center gap-2 text-lg font-semibold '>
-            <BarChart {...svgConfig} width={24} height={24} /> {currentAttendance} %
+          <p className='flex items-center text-lg font-semibold '>
+            <BarChart {...svgConfig} width={24} height={24} />
+            <span className='ml-1'>
+              {currentAttendance === 100 ? 100 : parseFloat(currentAttendance).toFixed(1)}%
+            </span>
           </p>
           {(attendanceStatus === 'Unmarked' || attendanceStatus === 'default') && (
             <p className='flex items-center gap-2 text-sm font-semibold text-red-500'>
-              <TrendingDown {...svgConfig} className='fill-red-500' /> {negImpact} %
+              <TrendingDown {...svgConfig} className='fill-red-500' />
+              {parseFloat(negImpact).toFixed(1)}%
             </p>
           )}
         </div>
