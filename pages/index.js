@@ -130,7 +130,7 @@ export default function Home() {
         }`}
       >
         <LogoWithText
-          className='cursor-pointer '
+          className='cursor-pointer fill-primary-600'
           width={100}
           onClick={() => {
             document.documentElement.scrollTo({
@@ -150,7 +150,7 @@ export default function Home() {
         >
           <Link href='/login' passHref>
             <button
-              className='flex items-center w-full px-3 py-2 text-center text-white bg-blue-600 rounded-md sm:mb-0 hover:bg-blue-700'
+              className='flex items-center w-full px-3 py-2 text-center text-white bg-primary-600 rounded-md sm:mb-0 hover:bg-primary-700'
               disabled={!showCTA}
               onClick={() => {
                 ReactGA.event('landing__loginWithAmizone', {
@@ -167,7 +167,7 @@ export default function Home() {
         <section>
           <h1 className='text-4xl font-extrabold tracking-tight text-gray-900'>
             <span className='block'>Amizone, </span>
-            <span className='text-blue-600 xl:inline'>made easier</span>
+            <span className='text-primary-600 xl:inline'>made easier</span>
           </h1>
           <p className='mx-auto mt-4 text-base text-gray-500'>
             Navigate classes, get attendance-related notifications, offline support, <br />
@@ -189,7 +189,7 @@ export default function Home() {
             </Link>
             <Link href='/login' passHref>
               <button
-                className='flex items-center w-full px-6 py-3 text-center text-white bg-blue-600 rounded-md shadow-below shadow-blue-600 sm:mb-0 hover:bg-blue-700'
+                className='flex items-center w-full px-6 py-3 text-center text-white  rounded-md shadow-below bg-primary-600 shadow-primary-600 sm:mb-0 hover:bg-primary-700'
                 onClick={() => {
                   ReactGA.event('landing__getStarted', {
                     event_category: 'USER'
@@ -280,7 +280,7 @@ export default function Home() {
 const FeatureBox = ({ icon, title, desc }) => {
   return (
     <div className='relative flex flex-col items-center justify-start col-span-6 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 shadow-md rounded-xl'>
-      <div className='p-3 text-white bg-blue-500 rounded-full'>{icon}</div>
+      <div className='p-3 text-white bg-primary-600 rounded-full'>{icon}</div>
       <h4 className='text-xl font-medium text-gray-700'>{title}</h4>
       <p className='text-base text-center text-gray-500'>{desc}</p>
     </div>

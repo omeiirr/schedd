@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: {
     enabled: true,
@@ -5,6 +7,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        primary: colors.sky
+      },
       fontFamily: {
         sans: ['Lato', 'sans-serif'],
         heading: ['Poppins', 'sans-serif']

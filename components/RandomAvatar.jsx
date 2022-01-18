@@ -55,7 +55,7 @@ const RandomAvatar = ({ setAvatar }) => {
         onClick={generateRandomSeed}
         width={60}
         height={60}
-        className='bg-blue-100 rounded-full shadow-md'
+        className='bg-primary-100 rounded-full shadow-md'
       />
     </div>
   );
