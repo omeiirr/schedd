@@ -49,12 +49,12 @@ const LectureCard = ({
   const [isCurrentlyOngoing, setIsCurrentlyOngoing] = useState(false);
 
   useEffect(() => {
-    setIsCurrentlyOngoing(dayjs().isBetween(from, to)); // to customise card according to current time
+    setIsCurrentlyOngoing(dayjs().isBetween(from, to, null, '[]')); // to customise card according to current time
   }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIsCurrentlyOngoing(dayjs().isBetween(from, to)); // to customise card according to current time
+      setIsCurrentlyOngoing(dayjs().isBetween(from, to, null, '[]')); // to customise card according to current time
     }, 1000 * 60); // every minute
     return () => clearInterval(timer);
   });
