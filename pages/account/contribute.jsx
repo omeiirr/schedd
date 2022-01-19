@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from 'react';
+import Head from 'next/head';
 
 // Libraries
 import { SkeletonCircle } from '@chakra-ui/react';
@@ -37,39 +38,44 @@ const Contribute = () => {
   }, []);
 
   return (
-    <div>
-      <Header title='Contribute' />
-      <main className='p-4 text-lg'>
-        <p>This project exists because of the efforts of all the people who contribute.</p>
-        <div
-          style={{
-            marginTop: '1rem',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))',
-            gap: '20px'
-          }}
-        >
-          {contributors.map((contributor, idx) => (
-            <div key={idx}>
-              <a href={contributor.url} target='_blank' rel='noreferrer'>
-                <SkeletonCircle isLoaded={isLoaded} width={80} height={80}>
-                  <img
-                    src={contributor.avatarUrl}
-                    alt={contributor.username}
-                    title={contributor.username}
-                    width={80}
-                    height={80}
-                    className='rounded-full shadow-lg hover:shadow-xl'
-                  />
-                </SkeletonCircle>
-              </a>
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
+    <>
+      <Head>
+        <title>Contribute - Schedd</title>
+      </Head>
+      <div>
+        <Header title='Contribute' />
+        <main className='p-4 text-lg'>
+          <p>This project exists because of the efforts of all the people who contribute.</p>
+          <div
+            style={{
+              marginTop: '1rem',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))',
+              gap: '20px'
+            }}
+          >
+            {contributors.map((contributor, idx) => (
+              <div key={idx}>
+                <a href={contributor.url} target='_blank' rel='noreferrer'>
+                  <SkeletonCircle isLoaded={isLoaded} width={80} height={80}>
+                    <img
+                      src={contributor.avatarUrl}
+                      alt={contributor.username}
+                      title={contributor.username}
+                      width={80}
+                      height={80}
+                      className='rounded-full shadow-lg hover:shadow-xl'
+                    />
+                  </SkeletonCircle>
+                </a>
+              </div>
+            ))}
+          </div>
+        </main>
+      </div>
+    </>
   );
 };
 export default Contribute;
