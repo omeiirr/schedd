@@ -21,12 +21,15 @@ dayjs.extend(relativeTime);
 const Home = () => {
   const [lectures, setLectures] = useState([{}, {}, {}, {}, {}, {}]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
+
   const [scheduleUpdatedAt, setScheduleUpdatedAt] = useState(new Date());
   const [timeLapsed, setTimeLapsed] = useState(null);
 
   const fetchDailySchedule = () => {
+    setLectures([{}, {}, {}, {}, {}, {}]);
     setIsLoaded(false);
-
+    setErrorMsg(null);
     axios
       .post(`${process.env.NEXT_PUBLIC_BASE_URL}/schedule/today`, {
         username: localStorage.getItem('username'),
@@ -35,7 +38,7 @@ const Home = () => {
 
       .then((res) => {
         // console.log(res.data);
-
+        setErrorMsg(null);
         let tempLecturesArray = [];
 
         res.data.map((lecture, idx) => {
@@ -63,7 +66,11 @@ const Home = () => {
         setScheduleUpdatedAt(new Date());
       })
 
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setIsLoaded(true);
+        setErrorMsg('Unable to fetch data. Please try again later.');
+      });
 
     ReactGA.event('fetch_daily_schedule', {
       event_category: 'USER'
@@ -133,15 +140,19 @@ const Home = () => {
               />
             </div>
           </div>
-          {lectures.map((lecture, idx) => {
-            return (
-              <ChakraProvider key={idx}>
-                <Skeleton isLoaded={isLoaded} style={{ borderRadius: '0.5rem' }}>
-                  <LectureCard {...lecture} />
-                </Skeleton>
-              </ChakraProvider>
-            );
-          })}
+          {errorMsg && <p>{errorMsg} </p>}
+          {lectures.length <= 0 && <p>Yay! You have no classes today</p>}
+          {!errorMsg &&
+            lectures.length > 0 &&
+            lectures.map((lecture, idx) => {
+              return (
+                <ChakraProvider key={idx}>
+                  <Skeleton isLoaded={isLoaded} style={{ borderRadius: '0.5rem' }}>
+                    <LectureCard {...lecture} />
+                  </Skeleton>
+                </ChakraProvider>
+              );
+            })}
         </main>
         <NavigationBar />
       </div>
