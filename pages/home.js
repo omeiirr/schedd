@@ -110,7 +110,7 @@ const Home = () => {
           <p className='text-lg text-gray-600'>Hi Omeir 👋</p>
           <h4 className='text-2xl font-medium font-heading '>{dateToDisplay}</h4>
         </header>
-        <main className='h-full p-4 pt-0 sm:px-8 '>
+        <main className='min-h-screen p-4 pt-0 sm:px-8 '>
           <div className='flex items-center justify-between mt-4 mb-2'>
             <h4 className='text-2xl font-medium font-heading '>Schedule</h4>
 
