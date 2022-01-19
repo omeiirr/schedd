@@ -16,3 +16,6 @@
     @apply font-semibold text-primary-600 underline decoration-dotted decoration-primary-600;
   }
 }
+* {
+  overscroll-behavior-y: contain;
+}
