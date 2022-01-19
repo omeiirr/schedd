@@ -61,7 +61,7 @@ const LectureCard = ({
 
   return (
     <div
-      className={`flex justify-between items-center mb-5 rounded-lg p-4 border-l-8 ${
+      className={`flex justify-between items-center mb-5 rounded-lg p-4 border-l-8 transition-all duration-1000 ${
         colors[attendanceStatus].bg
       }  ${colors[attendanceStatus].border}  ${
         isCurrentlyOngoing && colors[attendanceStatus].shadow
