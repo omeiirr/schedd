@@ -47,13 +47,22 @@ const Grades = () => {
             tempGradesArray.push(tempGradeObj);
           });
 
+          for (let i = 1; i < tempGradesArray.length; ++i) {
+            let tempSgpaChange =
+              ((parseFloat(tempGradesArray[i].sgpa) - parseFloat(tempGradesArray[i - 1].sgpa)) /
+                parseFloat(tempGradesArray[i - 1].sgpa)) *
+              100;
+
+            tempGradesArray[i].sgpaChange = parseFloat(tempSgpaChange).toFixed(2);
+          }
+
           for (let i = 2; i < tempGradesArray.length; ++i) {
-            let tempChange =
+            let tempCgpaChange =
               ((parseFloat(tempGradesArray[i].cgpa) - parseFloat(tempGradesArray[i - 1].cgpa)) /
                 parseFloat(tempGradesArray[i - 1].cgpa)) *
               100;
 
-            tempGradesArray[i].change = parseFloat(tempChange).toFixed(2);
+            tempGradesArray[i].cgpaChange = parseFloat(tempCgpaChange).toFixed(2);
           }
           setGrades(tempGradesArray);
         }
@@ -169,29 +178,39 @@ const Grades = () => {
                   className='shadow-black text-center text-xs font-medium text-white uppercase'
                   style={{ letterSpacing: '1px' }}
                 >
-                  <td className='p-2 py-4'>Sem</td>
-                  <td className='p-2 py-4'>SGPA</td>
-                  <td className='p-2 py-4'>CGPA</td>
-                  <td className='p-2 py-4'>CGPA +/-</td>
-                  <td className='p-2 py-4'>Back</td>
+                  <td className='p-2 pl-4 py-4'>Semester</td>
+                  <td className='p-2 py-4 text-left '>SGPA</td>
+                  <td className='p-2 py-4 text-left'>CGPA</td>
+                  <td className='p-2 py-4 pr-4'>Back</td>
                 </thead>
                 <tbody className='bg-white'>
                   {grades.map((grade, idx) => {
                     return (
-                      <tr key={idx} className='text-center text-xs font-medium text-gray-500'>
-                        <td className='p-2'>{grade.semester}</td>
-                        <td className='p-2 font-bold'>{grade.sgpa}</td>
-                        <td className='p-2 font-bold'>{grade.cgpa || '____'}</td>
-                        <td
-                          className={`p-2 font-bold ${
-                            grade.change > 0 ? ' text-green-500' : ' text-red-500'
-                          }`}
-                        >
-                          {(grade.change && grade.change + '%') || (
-                            <p className='text-gray-500 '>____</p>
-                          )}
+                      <tr key={idx} className='text-xs font-medium text-gray-500'>
+                        <td className='p-2 text-center'>{grade.semester}</td>
+                        <td className='p-2 font-bold text-left'>
+                          {grade.sgpa}
+                          <span
+                            className={`p-2 font-bold ${
+                              grade.sgpaChange > 0 ? ' text-green-500' : ' text-red-500'
+                            }`}
+                          >
+                            {grade.sgpaChange && '(' + grade.sgpaChange + '%)'}
+                          </span>
                         </td>
-                        <td className='p-4 '>{grade.backPapers || 0}</td>
+
+                        <td className='p-2 font-bold text-left'>
+                          {grade.cgpa || '____'}
+
+                          <span
+                            className={`p-2 font-bold ${
+                              grade.sgpaChange > 0 ? ' text-green-500' : ' text-red-500'
+                            }`}
+                          >
+                            {grade.cgpaChange && '(' + grade.cgpaChange + '%)'}
+                          </span>
+                        </td>
+                        <td className='p-4 text-center'>{grade.backPapers || 0}</td>
                       </tr>
                     );
                   })}
