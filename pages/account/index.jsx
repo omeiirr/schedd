@@ -22,6 +22,7 @@ import axios from 'axios';
 // Functions
 import shareLink from 'functions/shareLink';
 import handleLogout from 'functions/handleLogout';
+import useDetectPWA from 'hooks/useDetectPWA';
 
 const svgConfig = {
   fill: '#a3a3a3',
@@ -31,6 +32,8 @@ const svgConfig = {
 
 const Account = () => {
   const [appVersion, setAppVersion] = useState('');
+  const [isPwaInstalled] = useDetectPWA();
+
   useLayoutEffect(() => {
     axios
       .get(`${process.env.NEXT_PUBLIC_GITHUB_API_URL}/repos/omeiirr/schedd/releases/latest`)
@@ -89,9 +92,9 @@ const Account = () => {
     },
     {
       icon: <InstallMobile {...svgConfig} />,
-      title: 'Install PWA',
+      title: isPwaInstalled === false && 'Install PWA',
       description: 'What is a Progressive Web Application?',
-      link: '/account/report'
+      link: '/account/pwa'
     },
     {
       icon: <Logout {...svgConfig} />,
