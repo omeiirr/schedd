@@ -118,7 +118,7 @@ const Login = () => {
 
             <div className='mt-6'>
               <button
-                className='w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-primary-500 rounded-md disabled:bg-gray-300 hover:bg-primary-500 focus:outline-none focus:bg-primary-600'
+                className='w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform rounded-md bg-primary-600 disabled:bg-gray-300 hover:bg-primary-500 focus:outline-none focus:bg-primary-500'
                 onClick={login}
                 disabled={
                   userCredentials.username.length !== 7 || userCredentials.password.length < 1
@@ -142,7 +142,7 @@ const Login = () => {
           <div className='flex items-center mt-6 -mx-2'>
             <button
               type='button'
-              className='flex items-center justify-center w-full px-6 py-2 mx-2 font-medium text-primary-400 transition-colors duration-200 transform border-2 border-primary-400 rounded-md focus:outline-none'
+              className='flex items-center justify-center w-full px-6 py-2 mx-2 font-medium transition-colors duration-200 transform border-2 rounded-md text-primary-600 border-primary-600 focus:outline-none'
               onClick={() => demoLogin()}
             >
               <span className='mx-2 '>Try as a Demo User</span>
