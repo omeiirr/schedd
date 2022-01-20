@@ -4,8 +4,10 @@ import Head from 'next/head';
 // Components
 import Header from 'components/Header';
 
+// Functions
+import useFetchGrades from 'hooks/useFetchGrades';
+
 // Libraries
-import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 
 import {
@@ -18,66 +20,15 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
-
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const Grades = () => {
-  const [grades, setGrades] = useState();
+  const [grades, loading, error] = useFetchGrades();
   const [chartData, setChartData] = useState({});
-
-  const fetchGrades = () => {
-    axios
-      .post(`${process.env.NEXT_PUBLIC_BASE_URL}/grades`, {
-        username: localStorage.getItem('username'),
-        password: localStorage.getItem('password')
-      })
-
-      .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          let tempGradesArray = [];
-
-          res.data.map((grade) => {
-            let tempGradeObj = {
-              semester: grade.semester,
-              sgpa: grade.sgpa,
-              cgpa: grade.cgpa,
-              backPapers: grade.backPapers
-            };
-            tempGradesArray.push(tempGradeObj);
-          });
-
-          for (let i = 1; i < tempGradesArray.length; ++i) {
-            let tempSgpaChange =
-              ((parseFloat(tempGradesArray[i].sgpa) - parseFloat(tempGradesArray[i - 1].sgpa)) /
-                parseFloat(tempGradesArray[i - 1].sgpa)) *
-              100;
-
-            tempGradesArray[i].sgpaChange = parseFloat(tempSgpaChange).toFixed(2);
-          }
-
-          for (let i = 2; i < tempGradesArray.length; ++i) {
-            let tempCgpaChange =
-              ((parseFloat(tempGradesArray[i].cgpa) - parseFloat(tempGradesArray[i - 1].cgpa)) /
-                parseFloat(tempGradesArray[i - 1].cgpa)) *
-              100;
-
-            tempGradesArray[i].cgpaChange = parseFloat(tempCgpaChange).toFixed(2);
-          }
-          setGrades(tempGradesArray);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const [showTable, setShowTable] = useState(false);
 
   useEffect(() => {
-    fetchGrades();
-  }, []);
-
-  useEffect(() => {
-    console.log(grades);
+    // console.log(grades);
     setChartData({
       labels: grades?.map((grade) => grade.semester),
       datasets: [
@@ -172,7 +123,15 @@ const Grades = () => {
       <div>
         <Header title='My Grades' />
         <main className='p-4 '>
-          {grades && grades.length > 0 ? (
+          {loading && (
+            <p className='grid h-32 animate-pulse bg-slate-200 rounded-xl place-items-center '>
+              Loading. . .
+            </p>
+          )}
+
+          {error && <p>Unable to fetch data. Please try again later.</p>}
+
+          {!loading && !error && grades && grades.length > 0 && (
             <div>
               <Line options={options} data={chartData} />
               <table className='mt-6 bg-sky-600  w-full  rounded-lg shadow-below'>
@@ -225,10 +184,6 @@ const Grades = () => {
                 </tbody>
               </table>
             </div>
-          ) : (
-            <p className='h-32 animate-pulse bg-slate-200 rounded-xl grid place-items-center '>
-              Loading. . .
-            </p>
           )}
         </main>
       </div>
