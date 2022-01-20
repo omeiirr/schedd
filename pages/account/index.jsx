@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from 'react';
+import Head from 'next/head';
 
 // Icons
 import Settings from 'assets/icons/Account/Settings.svg';
@@ -12,7 +13,6 @@ import InstallMobile from 'assets/icons/Account/InstallMobile.svg';
 import Logout from 'assets/icons/Account/Logout.svg';
 
 // Components
-import Head from 'next/head';
 import NavigationBar from 'components/NavigationBar/NavigationBar';
 import RowItem from 'components/RowItem';
 
@@ -21,6 +21,7 @@ import axios from 'axios';
 
 // Functions
 import shareLink from 'functions/shareLink';
+import handleLogout from 'functions/handleLogout';
 
 const svgConfig = {
   fill: '#a3a3a3',
@@ -96,7 +97,7 @@ const Account = () => {
       icon: <Logout {...svgConfig} />,
       title: 'Logout',
       description: 'This action will erase all app data ',
-      link: '/'
+      handleClick: () => handleLogout()
     }
   ];
 
