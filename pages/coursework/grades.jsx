@@ -166,7 +166,9 @@ const Grades = () => {
 
   return (
     <>
-      <Head>My Grades - Schedd</Head>
+      <Head>
+        <title>My Grades - Schedd</title>
+      </Head>
       <div>
         <Header title='My Grades' />
         <main className='p-4 '>
