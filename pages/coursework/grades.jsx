@@ -178,7 +178,7 @@ const Grades = () => {
                   className='shadow-black text-center text-xs font-medium text-white uppercase'
                   style={{ letterSpacing: '1px' }}
                 >
-                  <td className='p-2 pl-4 py-4'>Semester</td>
+                  <td className='p-2 py-4 pl-4'>Sem</td>
                   <td className='p-2 py-4 text-left '>SGPA</td>
                   <td className='p-2 py-4 text-left'>CGPA</td>
                   <td className='p-2 py-4 pr-4'>Back</td>
@@ -195,6 +195,9 @@ const Grades = () => {
                               grade.sgpaChange > 0 ? ' text-green-500' : ' text-red-500'
                             }`}
                           >
+                            {grade.sgpaChange > 0 && <span className='pr-1'> &#x25B2;</span>}
+                            {grade.sgpaChange < 0 && <span className='pr-1'> &#x25BC;</span>}
+
                             {grade.sgpaChange && '(' + grade.sgpaChange + '%)'}
                           </span>
                         </td>
@@ -207,6 +210,9 @@ const Grades = () => {
                               grade.sgpaChange > 0 ? ' text-green-500' : ' text-red-500'
                             }`}
                           >
+                            {grade.cgpaChange > 0 && <span className='pr-1'> &#x25B2;</span>}
+                            {grade.cgpaChange < 0 && <span className='pr-1'> &#x25BC;</span>}
+
                             {grade.cgpaChange && '(' + grade.cgpaChange + '%)'}
                           </span>
                         </td>
