@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 const useDetectPWA = () => {
   const [isPWA, setIsPWA] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // For iOS
     if (window?.navigator?.standalone) {
       setIsPWA(true);
