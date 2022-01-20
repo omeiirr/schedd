@@ -13,9 +13,10 @@
     @apply px-2 py-[2px] ml-2 text-[12px] font-medium text-center rounded-2xl;
   }
   .external-link {
-    @apply font-semibold text-primary-600 underline decoration-dotted decoration-primary-600;
+    @apply font-semibold underline text-primary-600 decoration-dotted decoration-primary-600;
   }
 }
-/* * {
-  overscroll-behavior-y: none;
-} */
+* {
+  /* overscroll-behavior-y: none; */
+  scroll-behavior: smooth;
+}

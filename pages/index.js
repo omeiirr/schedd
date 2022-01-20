@@ -187,9 +187,9 @@ export default function Home() {
                 Try a Demo
               </button>
             </Link>
-            <Link href='/login' passHref>
+            <Link href='#features' passHref>
               <button
-                className='flex items-center w-full px-6 py-3 text-center text-white transition-all duration-200 rounded-md shadow-below bg-primary-600 shadow-primary-600 sm:mb-0 hover:bg-primary-700'
+                className='flex items-center w-full px-6 py-3 text-center text-white transition-all duration-200 rounded-md shadow-below bg-primary-600 shadow-primary-600 sm:mb-0 hover:sm:bg-primary-700'
                 onClick={() => {
                   ReactGA.event('landing__getStarted', {
                     event_category: 'USER'
@@ -236,7 +236,7 @@ export default function Home() {
       </div>
 
       {/* <!-- Section 2 --> */}
-      <section className='px-4 py-8 bg-white sm:px-8'>
+      <section id='features' className='px-4 py-8 pt-20 bg-white sm:px-8'>
         <div className='container max-w-6xl mx-auto'>
           <h2 className='text-4xl font-bold tracking-tight text-center '>Features</h2>
           <p className='mt-2 text-lg text-center text-gray-600'>Why choose Schedd</p>
