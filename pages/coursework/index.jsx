@@ -32,31 +32,35 @@ const Coursework = () => {
     {
       icon: <Board {...svgConfig} />,
       title: 'My Grades',
-      link: '/coursework/grades'
+      link: '/coursework/grades',
+      tags: [{ content: 'New', colortheme: 'green' }]
     },
     {
       icon: <Calendar {...svgConfig} />,
       title: 'Weekly Timetable',
-      link: '/coursework/weekly-timetable'
+      link: '/coursework/weekly-timetable',
+      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
     },
     {
       icon: <ReceiptLong {...svgConfig} />,
       title: 'Consolidated Syllabus',
       description: 'Syllabus of all your subjects, in one place',
-      link: '/coursework/syllabus'
+      link: '/coursework/syllabus',
+      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
     },
     {
       icon: <Hand {...svgConfig} />,
       title: 'Attendance Estimate',
       description: 'How many classes can you safely miss?',
+      tags: [{ content: 'Coming soon', colortheme: 'yellow' }],
       link: '/coursework/attendance-estimate'
-    },
-    {
-      icon: <Grading {...svgConfig} />,
-      title: 'Examination Result',
-      description: 'Check the latest results',
-      link: '/coursework/latest-results'
     }
+    // {
+    //   icon: <Grading {...svgConfig} />,
+    //   title: 'Examination Result',
+    //   description: 'Check the latest results',
+    //   link: '/coursework/latest-results'
+    // }
   ];
 
   return (
@@ -67,9 +71,9 @@ const Coursework = () => {
       <div className='flex flex-col h-screen'>
         <header className='p-4 sm:p-8'>
           <h4 className='text-3xl font-medium font-heading '>My Coursework</h4>
-          <p className='text-gray-400 text-md'>B.Tech CSE</p>
+          {/* <p className='text-gray-400 text-md'>B.Tech CSE</p> */}
         </header>
-        <main className='flex-1 p-4 pt-0 sm:px-8'>
+        <main className='flex-1 p-4 pt-0 sm:px-8 min-h-screen '>
           {options.map((item, idx) => {
             //   console.log(item);
             return (
