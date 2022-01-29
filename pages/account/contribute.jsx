@@ -45,7 +45,21 @@ const Contribute = () => {
       <div>
         <Header title='Contribute' />
         <main className='p-4 text-lg'>
-          <p>This project exists because of the efforts of all the people who contribute.</p>
+          <p>
+            Schedd depends on the contributions from the open-source community for its maintenance.
+            Check out the repository{' '}
+            <a
+              href='https://github.com/omeiirr/schedd'
+              className='external-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              here
+            </a>{' '}
+            .
+          </p>
+          {/* <p>This project exists because of the efforts of all the people who contribute.</p> */}
+          <p className='mt-8'>Present contributors:</p>
           <div
             style={{
               marginTop: '1rem',
