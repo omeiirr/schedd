@@ -66,36 +66,39 @@ const Account = () => {
       description: 'Interested to help? Check out our guide',
       link: '/account/contribute'
     },
-    {
-      icon: <Heart {...svgConfig} />,
-      title: 'Sponsor',
-      tags: [{ content: 'Coming soon', colortheme: 'yellow' }],
-      description: 'Loving the app? Show some support!',
-      link: '/account/sponsor'
-    },
+    // {
+    //   icon: <Heart {...svgConfig} />,
+    //   title: 'Sponsor',
+    //   tags: [{ content: 'Coming soon', colortheme: 'yellow' }],
+    //   description: 'Loving the app? Show some support!',
+    //   link: '/account/sponsor'
+    // },
     {
       icon: <Info {...svgConfig} />,
       title: 'About',
       description: 'Motivation, stuff in works, and future plans',
-      link: '/account/about'
+      link: '/account/about',
+      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
     },
     {
       icon: <Email {...svgConfig} />,
       title: 'Contact',
       description: 'Send us your questions or suggestions',
-      link: '/account/contact'
+      link: '/account/contact',
+      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
     },
-    {
-      icon: <Bug {...svgConfig} />,
-      title: 'Report a bug',
-      description: 'Help us improve your experience',
-      link: '/account/report'
-    },
+    // {
+    //   icon: <Bug {...svgConfig} />,
+    //   title: 'Report a bug',
+    //   description: 'Help us improve your experience',
+    //   link: '/account/report'
+    // },
     {
       icon: <InstallMobile {...svgConfig} />,
       title: isPwaInstalled === false && 'Install PWA',
       description: 'What is a Progressive Web Application?',
-      link: '/account/pwa'
+      link: '/account/pwa',
+      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
     },
     {
       icon: <Logout {...svgConfig} />,
@@ -115,7 +118,7 @@ const Account = () => {
           <h4 className='text-3xl font-medium font-heading '>My Account</h4>
           {/* <p className='text-gray-400 text-md'>B.Tech CSE</p> */}
         </header>
-        <main className='p-4 pt-0 sm:px-8'>
+        <main className='p-4 pt-0 sm:px-8 min-h-screen'>
           {options.map((item, idx) => {
             return (
               <RowItem
