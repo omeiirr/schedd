@@ -25,8 +25,26 @@ const options = [
     link: '/coursework'
   },
   {
-    logo: <Person {...svgConfig} />,
-    activeLogo: <Person {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
+    logo: (
+      <img
+        src={localStorage.getItem('avatarUrl')}
+        alt='avatar'
+        width={28}
+        height={28}
+        className='bg-primary-100 rounded-full shadow-md'
+      />
+    ),
+    activeLogo: (
+      <img
+        src={localStorage.getItem('avatarUrl')}
+        alt='avatar'
+        width={28}
+        height={28}
+        className='bg-primary-100 rounded-full shadow-md'
+      />
+    ),
+    // logo: <Person {...svgConfig} />,
+    // activeLogo: <Person {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
     text: 'Account',
     link: '/account'
   }
