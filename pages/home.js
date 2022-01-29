@@ -81,13 +81,6 @@ const Home = () => {
     fetchDailySchedule();
   }, []);
 
-  const today = new Date().toDateString();
-  const day = today.split(' ')[0];
-  const month = today.split(' ')[1];
-  const date = today.split(' ')[2];
-
-  const dateToDisplay = `${day}, ${date} ${month}`;
-
   const svgConfig = {
     fill: '#000',
     height: '20px',
@@ -114,8 +107,10 @@ const Home = () => {
       </Head>
       <div>
         <header className='p-4 sm:p-8'>
-          <p className='text-lg text-gray-600'>Hi Omeir 👋</p>
-          <h4 className='text-2xl font-medium font-heading '>{dateToDisplay}</h4>
+          <p className='text-lg text-gray-600'>Hey there 👋</p>
+          <h4 className='text-2xl font-medium font-heading '>
+            {dayjs(new Date()).format('ddd, D MMM')}
+          </h4>
         </header>
         <main className='min-h-screen p-4 pt-0 sm:px-8 '>
           <div className='flex items-center justify-between mt-4 mb-2'>
