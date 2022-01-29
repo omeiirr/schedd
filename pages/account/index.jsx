@@ -111,8 +111,8 @@ const Account = () => {
       </Head>
       <div className='h-screen'>
         <header className='p-4 sm:p-8'>
-          <h4 className='text-3xl font-medium font-heading '>Omeir Fawaz</h4>
-          <p className='text-gray-400 text-md'>B.Tech CSE</p>
+          <h4 className='text-3xl font-medium font-heading '>My Account</h4>
+          {/* <p className='text-gray-400 text-md'>B.Tech CSE</p> */}
         </header>
         <main className='p-4 pt-0 sm:px-8'>
           {options.map((item, idx) => {
