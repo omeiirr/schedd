@@ -50,10 +50,10 @@ const Coursework = () => {
       tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
     },
     {
-      icon: <Hand {...svgConfig} />,
+      icon: <Hand {...svgConfig} height={24} width={24} />,
       title: 'Attendance Estimate',
       description: 'How many classes can you safely miss?',
-      tags: [{ content: 'Coming soon', colortheme: 'yellow' }],
+      tags: [{ content: 'Experimental', colortheme: 'blue' }],
       link: '/coursework/attendance-estimate'
     }
     // {
@@ -74,7 +74,7 @@ const Coursework = () => {
           <h4 className='text-3xl font-medium font-heading '>My Coursework</h4>
           {/* <p className='text-gray-400 text-md'>B.Tech CSE</p> */}
         </header>
-        <main className='flex-1 p-4 pt-0 sm:px-8 min-h-screen '>
+        <main className='flex-1 min-h-screen p-4 pt-0 sm:px-8 '>
           {options.map((item, idx) => {
             //   console.log(item);
             return (
