@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import LogoText from 'public/LogoWithText.svg';
 
 import ReactGA from 'react-ga4';
+import Header from 'components/Header';
 
 const Login = () => {
   const [userCredentials, setUserCredentials] = useState({
@@ -55,8 +56,10 @@ const Login = () => {
         <title>Login - Schedd</title>
       </Head>
 
-      <div className='w-full h-screen px-4 bg-white'>
-        <div className='px-4 py-8 mt-16 bg-white border-2 border-gray-200 shadow-md rounded-xl '>
+      <div className='w-full h-screen bg-white'>
+        <Header title='Login' />
+
+        <div className='px-4 py-8 mx-4 mt-16 bg-white border-2 border-gray-200 shadow-md rounded-xl '>
           <LogoText className='mx-auto fill-primary-600' width={140} />
           <div className='flex items-center justify-between w-full mt-6 '>
             <div className='flex flex-col items-start'>
