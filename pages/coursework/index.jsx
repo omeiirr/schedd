@@ -22,7 +22,8 @@ const Coursework = () => {
     {
       icon: <OpenBook {...svgConfig} />,
       title: 'My Courses',
-      link: '/coursework/courses'
+      link: '/coursework/courses',
+      tags: [{ content: 'New', colortheme: 'green' }]
     },
     {
       icon: <Groups {...svgConfig} />,
