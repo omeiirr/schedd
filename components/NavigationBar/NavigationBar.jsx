@@ -7,7 +7,7 @@ import Link from 'next/link';
 const svgConfig = {
   height: '28px',
   width: '28px',
-  fill: '#000',
+  fill: '#fff',
   stroke: '#000'
 };
 
