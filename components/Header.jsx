@@ -7,7 +7,7 @@ const Header = ({ title = 'Go back' }) => {
   const [headerShadow, setHeaderShadow] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) setHeaderShadow(true);
+      if (window.scrollY > 20) setHeaderShadow(true);
       else setHeaderShadow(false);
     };
     window.addEventListener('scroll', handleScroll);

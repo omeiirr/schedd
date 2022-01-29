@@ -44,9 +44,11 @@ const Contribute = () => {
       </Head>
       <div>
         <Header title='Contribute' />
-        <main className='p-4 text-lg'>
+        <main className='p-4'>
+          <p className='text-justify'>
+            Schedd depends on contributions from the open-source community for its maintenance.
+          </p>
           <p>
-            Schedd depends on the contributions from the open-source community for its maintenance.
             Check out the repository{' '}
             <a
               href='https://github.com/omeiirr/schedd'

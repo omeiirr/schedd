@@ -49,12 +49,12 @@ const Courses = () => {
       <div>
         <Header title='My Courses' />
         <main className='p-4 '>
-          <div className='flex items-center gap-2 mb-6 pb-2 whitespace-nowrap overflow-x-auto'>
+          <div className='flex items-center gap-2 pb-2 mb-6 overflow-x-auto whitespace-nowrap'>
             {attendanceTierColors.map((color, idx) => {
               return (
                 <div
                   key={idx}
-                  className='px-2 py-1 rounded-xl font-semibold text-xs'
+                  className='px-2 py-1 text-xs font-semibold rounded-xl'
                   style={{ backgroundColor: color.color, width: 'fit-content' }}
                 >
                   {color.tier}
@@ -110,7 +110,7 @@ const CourseCard = ({ course }) => {
   const [whitespaceBreak, setWhitespaceBreak] = useState(false);
   return (
     <div
-      className='text-sm px-4 h-32 bg-primary-200 mb-4 rounded-lg flex gap-4 items-center justify-start shadow-lg'
+      className='flex items-center justify-start w-full h-32 gap-4 px-4 mb-4 text-sm rounded-lg shadow-lg bg-primary-200'
       style={{
         backgroundColor: determineAttendanceTierColor(
           calculateAttendancePercentage(course.attendance.attended, course.attendance.total)
@@ -120,7 +120,7 @@ const CourseCard = ({ course }) => {
       <div className='min-w-0'>
         <p className='font-semibold'>{course.code}</p>
         <h4
-          className='text-xl overflow-hidden text-ellipsis'
+          className='overflow-hidden text-xl text-ellipsis'
           style={{ whiteSpace: whitespaceBreak ? 'break-spaces' : 'nowrap' }}
           onClick={() => setWhitespaceBreak(!whitespaceBreak)}
         >
@@ -129,7 +129,7 @@ const CourseCard = ({ course }) => {
         <p>{course.type}</p>
       </div>
       {course.attendance.attended && (
-        <div className='w-24 ml-auto flex flex-col justify-center items-center pb-4'>
+        <div className='flex flex-col items-center justify-center w-24 pb-4 ml-auto'>
           <Doughnut data={doughnutChartData} />
           <p className='mt-[-0.6rem]'>
             {course.attendance.attended} / {course.attendance.total}{' '}
