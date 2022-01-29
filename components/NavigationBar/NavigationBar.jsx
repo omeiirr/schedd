@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Home from 'assets/icons/MobileBar/Home.svg';
 import School from 'assets/icons/MobileBar/School.svg';
 import Person from 'assets/icons/MobileBar/Person.svg';
@@ -11,46 +12,50 @@ const svgConfig = {
   stroke: '#000'
 };
 
-const options = [
-  {
-    logo: <Home {...svgConfig} />,
-    activeLogo: <Home {...svgConfig} className='stroke-primary-600 fill-primary-600' />,
-    text: 'Home',
-    link: '/home'
-  },
-  {
-    logo: <School {...svgConfig} />,
-    activeLogo: <School {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
-    text: 'Coursework',
-    link: '/coursework'
-  },
-  {
-    logo: (
-      <img
-        src={localStorage.getItem('avatarUrl')}
-        alt='avatar'
-        width={28}
-        height={28}
-        className='bg-primary-100 rounded-full shadow-md'
-      />
-    ),
-    activeLogo: (
-      <img
-        src={localStorage.getItem('avatarUrl')}
-        alt='avatar'
-        width={28}
-        height={28}
-        className='bg-primary-100 rounded-full shadow-md'
-      />
-    ),
-    // logo: <Person {...svgConfig} />,
-    // activeLogo: <Person {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
-    text: 'Account',
-    link: '/account'
-  }
-];
-
 const NavigationBar = () => {
+  const [avatarUrl, setAvatarUrl] = useState('');
+  useEffect(() => {
+    setAvatarUrl(localStorage.getItem('avatarUrl'));
+  }, []);
+
+  const options = [
+    {
+      logo: <Home {...svgConfig} />,
+      activeLogo: <Home {...svgConfig} className='stroke-primary-600 fill-primary-600' />,
+      text: 'Home',
+      link: '/home'
+    },
+    {
+      logo: <School {...svgConfig} />,
+      activeLogo: <School {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
+      text: 'Coursework',
+      link: '/coursework'
+    },
+    {
+      logo: (
+        <img
+          src={avatarUrl}
+          alt='avatar'
+          width={28}
+          height={28}
+          className='bg-primary-100 rounded-full shadow-md'
+        />
+      ),
+      activeLogo: (
+        <img
+          src={avatarUrl}
+          alt='avatar'
+          width={28}
+          height={28}
+          className='bg-primary-100 rounded-full shadow-md'
+        />
+      ),
+      // logo: <Person {...svgConfig} />,
+      // activeLogo: <Person {...svgConfig} className='fill-primary-600 stroke-primary-600' />,
+      text: 'Account',
+      link: '/account'
+    }
+  ];
   const router = useRouter();
   return (
     <div className='sticky bottom-0 w-full max-w-screen-sm py-1 bg-white shadow-above'>
