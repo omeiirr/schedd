@@ -36,7 +36,7 @@ const attendanceTierColors = [
     tier: 'Not available',
     color: '#d1d5db'
   }
-]; // increaing order of percentage (red to green)
+]; // increasing order of percentage (red to green)
 
 const Courses = () => {
   const [courses, loading, error] = useFetchCourses();
