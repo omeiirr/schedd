@@ -28,7 +28,8 @@ const Coursework = () => {
     {
       icon: <Groups {...svgConfig} />,
       title: 'My Faculty',
-      link: '/coursework/faculty'
+      link: '/coursework/faculty',
+      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
     },
     {
       icon: <Board {...svgConfig} />,
@@ -47,7 +48,7 @@ const Coursework = () => {
       title: 'Consolidated Syllabus',
       description: 'Syllabus of all your subjects, in one place',
       link: '/coursework/syllabus',
-      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
+      tags: [{ content: 'New', colortheme: 'green' }]
     },
     {
       icon: <Hand {...svgConfig} height={24} width={24} />,
