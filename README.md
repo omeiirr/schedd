@@ -10,8 +10,7 @@
 
 ### My Coursework
 
-<img src="https://user-images.githubusercontent.com/54888682/151704021-802efe4e-df6b-454d-9562-330308a9e465.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704085-0c59b95d-af94-425e-adc2-dc7eed59cca9.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704145-74d358ab-0d2f-42b0-be07-2bee06655064.jpg" width="250px" />
-<img src="https://user-images.githubusercontent.com/54888682/151703678-eaf82ffd-15fb-40f7-8058-51f2e1ebad4e.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704180-92278af9-d5fb-41ac-b47e-3c5e1afe97a8.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704217-1ddd5362-a337-4816-8513-c2ed7779722c.jpg" width="250px" />
+<img src="https://user-images.githubusercontent.com/54888682/151704021-802efe4e-df6b-454d-9562-330308a9e465.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704085-0c59b95d-af94-425e-adc2-dc7eed59cca9.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704145-74d358ab-0d2f-42b0-be07-2bee06655064.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704180-92278af9-d5fb-41ac-b47e-3c5e1afe97a8.jpg" width="250px" /> <img src="https://user-images.githubusercontent.com/54888682/151704217-1ddd5362-a337-4816-8513-c2ed7779722c.jpg" width="250px" />
 
 ### My Account
 
