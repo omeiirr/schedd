@@ -31,9 +31,19 @@ export default function Home() {
   };
 
   const demonstrationImages = [
-    'https://pbs.twimg.com/media/FIDK3gIUUAA650x?format=jpg&name=medium',
-    'https://pbs.twimg.com/media/FIDFei7VkAAJh8J?format=jpg&name=medium',
-    'https://pbs.twimg.com/media/FIDF4kgVEAAZnZ_?format=jpg&name=medium'
+    'https://user-images.githubusercontent.com/54888682/151703993-82be3634-1370-4794-9b42-7021ab634b5f.jpg',
+
+    'https://user-images.githubusercontent.com/54888682/151704021-802efe4e-df6b-454d-9562-330308a9e465.jpg',
+
+    'https://user-images.githubusercontent.com/54888682/151704085-0c59b95d-af94-425e-adc2-dc7eed59cca9.jpg',
+
+    'https://user-images.githubusercontent.com/54888682/151704145-74d358ab-0d2f-42b0-be07-2bee06655064.jpg',
+
+    'https://user-images.githubusercontent.com/54888682/151704180-92278af9-d5fb-41ac-b47e-3c5e1afe97a8.jpg',
+
+    'https://user-images.githubusercontent.com/54888682/151704217-1ddd5362-a337-4816-8513-c2ed7779722c.jpg',
+
+    'https://user-images.githubusercontent.com/54888682/151704255-e3281b0b-4455-4a50-acc2-e81dbab5a139.jpg'
   ];
 
   const featuresList = [
