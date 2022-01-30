@@ -95,10 +95,13 @@ const Account = () => {
     // },
     {
       icon: <InstallMobile {...svgConfig} />,
-      title: isPwaInstalled === false && 'Install PWA',
-      description: 'What is a Progressive Web Application?',
+      title: 'Install PWA',
+      description:
+        isPwaInstalled === false
+          ? 'What is a Progressive Web Application?'
+          : 'PWA is already installed',
       link: '/account/pwa',
-      tags: [{ content: 'Coming soon', colortheme: 'yellow' }]
+      tags: [{ content: 'New', colortheme: 'green' }]
     },
     {
       icon: <Logout {...svgConfig} />,
@@ -118,7 +121,7 @@ const Account = () => {
           <h4 className='text-3xl font-medium font-heading '>My Account</h4>
           {/* <p className='text-gray-400 text-md'>B.Tech CSE</p> */}
         </header>
-        <main className='p-4 pt-0 sm:px-8 min-h-screen'>
+        <main className='min-h-screen p-4 pt-0 sm:px-8'>
           {options.map((item, idx) => {
             return (
               <RowItem
