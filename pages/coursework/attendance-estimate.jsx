@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Header from 'components/Header';
 import { useEffect, useState } from 'react';
+import Counter from 'components/Counter';
+import Info from 'assets/icons/Account/Info.svg';
 
 const AttendanceEstimate = () => {
   const [credits, setCredits] = useState(0);
@@ -38,14 +40,13 @@ const AttendanceEstimate = () => {
         <main className='p-4'>
           <div className='flex items-center justify-between gap-4'>
             <h4 className=''>Select course credits (1 to 6)</h4>
-            <input
-              type='number'
+
+            <Counter
+              value={credits}
+              handleIncrement={() => setCredits(credits + 1)}
+              handleDecrement={() => setCredits(credits - 1)}
               min={0}
               max={6}
-              step={1}
-              className='block w-full max-w-[80px] min-w-0 px-3 py-1  text-gray-700 transition-all duration-500 bg-white border rounded-md focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300 '
-              value={credits}
-              onChange={(e) => setCredits(e.target.value)}
             />
           </div>
           <div className='flex items-center justify-between my-6'>
@@ -65,15 +66,18 @@ const AttendanceEstimate = () => {
             />
           </div>
           <p
-            className={`px-4 py-2 mt-8 text-sm text-justify rounded-lg shadow-md text-primary-600 transition-opacity duration-300 bg-primary-100 ${
+            className={`px-3 py-2 mt-8 text-sm  text-justify rounded-lg shadow-md text-primary-600 flex items-start gap-2 transition-opacity duration-300 bg-primary-100 ${
               classes > 0 ? 'opacity-100' : 'opacity-0'
             } `}
           >
-            Note: The number of classes per credits may vary across subjects and batches. Provide
+            <span>
+              <Info width={20} height={20} className='fill-primary-600' />
+            </span>
+            The number of classes per credits may vary across subjects and batches. <br /> Provide
             your own estimate for the total number of classes for more accurate results.
           </p>
           <div
-            className={`mt-8 transition-opacity duration-500 ${
+            className={`mt-8 transition-opacity duration-500 text-sm ${
               classes > 0 ? 'opacity-100' : 'opacity-0'
             } `}
           >
@@ -86,16 +90,16 @@ const AttendanceEstimate = () => {
                     style={{
                       backgroundColor: selectAttendanceTierColor[tier.abovePercentage]
                     }}
-                    className='px-1 py-0 mx-1 rounded-sm decoration-wavy decoration-primary-500'
+                    className='px-3 py-0 rounded-sm '
                   >
                     {tier.missedClasses} classes
                   </span>
-                  for attendance
+                  <span className='mx-2'>for attendance</span>
                   <span
                     style={{
                       backgroundColor: selectAttendanceTierColor[tier.abovePercentage]
                     }}
-                    className='px-1 py-0 mx-1 rounded-sm decoration-wavy decoration-primary-500'
+                    className='px-3 py-0 mx-1 rounded-sm'
                   >
                     above {tier.abovePercentage}%
                   </span>
