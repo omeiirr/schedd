@@ -26,7 +26,7 @@ class MyDocument extends Document {
             name='twitter:description'
             content='Check your Amizone classes, attendance, grades, and more, without the hassle.'
           />
-          <meta name='twitter:image' content='https://www.schedd.xyz/Logo.svg' />
+          <meta name='twitter:image' content='https://www.schedd.xyz/logo-192x192.png' />
         </Head>
         <body>
           <Main />
