@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   const demonstrationImages = [
-    'https://user-images.githubusercontent.com/54888682/151703993-82be3634-1370-4794-9b42-7021ab634b5f.jpg',
+    'https://user-images.githubusercontent.com/54888682/151706827-d6c5acfb-ad51-4455-a736-e230c1942940.jpg',
 
     'https://user-images.githubusercontent.com/54888682/151704021-802efe4e-df6b-454d-9562-330308a9e465.jpg',
 
