@@ -3,8 +3,10 @@ import Head from 'next/head';
 import '../styles/index.css';
 import { useEffect } from 'react';
 import ReactGA from 'react-ga4';
+import useDetectPWA from 'hooks/useDetectPWA';
 
 function MyApp({ Component, pageProps }) {
+  const [isPwaInstalled] = useDetectPWA();
   useEffect(() => {
     // Add Google Analytics
     ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID);
@@ -23,6 +25,18 @@ function MyApp({ Component, pageProps }) {
         });
     }
   }, []);
+
+  useEffect(() => {
+    if (isPwaInstalled) {
+      ReactGA.event('pwaOpened', {
+        event_category: 'APP'
+      });
+    } else {
+      ReactGA.event('nonPwaOpened', {
+        event_category: 'APP'
+      });
+    }
+  }, [isPwaInstalled]);
 
   return (
     <Store>
