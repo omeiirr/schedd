@@ -36,7 +36,7 @@ const PWA = () => {
               <p className='text-sm'>Steps to install</p>
               <ul className='text-sm list-decimal list-inside'>
                 <li>Open the browser menu</li>
-                <li>Select 'Add to Home Screen'</li>
+                <li>Select "Add to Home Screen"</li>
                 <li>Place app icon on screen</li>
               </ul>
               {/* <button className='w-full px-4 py-2 text-white rounded-lg shadow-lg bg-primary-500'>
