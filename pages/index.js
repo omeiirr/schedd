@@ -29,6 +29,13 @@ export default function Home() {
     strokeLinecap: 'round',
     strokeLinejoin: 'round'
   };
+
+  const demonstrationImages = [
+    'https://pbs.twimg.com/media/FIDK3gIUUAA650x?format=jpg&name=medium',
+    'https://pbs.twimg.com/media/FIDFei7VkAAJh8J?format=jpg&name=medium',
+    'https://pbs.twimg.com/media/FIDF4kgVEAAZnZ_?format=jpg&name=medium'
+  ];
+
   const featuresList = [
     {
       icon: <Speed {...featuresSvgConfig} />,
@@ -217,21 +224,16 @@ export default function Home() {
       </div>
       <div className='w-full '>
         <div className='flex items-center w-full h-auto gap-4 px-4 pb-6 mt-4 overflow-hidden overflow-x-scroll '>
-          <img
-            src='https://pbs.twimg.com/media/FIDK3gIUUAA650x?format=jpg&name=medium'
-            className='border-2 shadow-below h-96 rounded-2xl w-60'
-            alt='demonstration_slide1'
-          />
-          <img
-            src='https://pbs.twimg.com/media/FIDFei7VkAAJh8J?format=jpg&name=medium'
-            className='border-2 shadow-below h-96 rounded-2xl w-60'
-            alt='demonstration_slide2'
-          />
-          <img
-            src='https://pbs.twimg.com/media/FIDF4kgVEAAZnZ_?format=jpg&name=medium'
-            className='border-2 shadow-below h-96 rounded-2xl w-60'
-            alt='demonstration_slide3'
-          />
+          {demonstrationImages.map((image, idx) => {
+            return (
+              <img
+                key={idx}
+                src={image}
+                className='border-2 shadow-below h-96 rounded-2xl w-60'
+                alt={`demonstration_slide${idx + 1}`}
+              />
+            );
+          })}
         </div>
       </div>
 
