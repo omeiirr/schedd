@@ -44,8 +44,8 @@ const Contribute = () => {
       </Head>
       <div>
         <Header title='Contribute' />
-        <main className='p-4'>
-          <p className='text-justify'>
+        <main className='p-4 text-sm'>
+          <p className='text-left'>
             Schedd depends on contributions from the open-source community for its maintenance.
           </p>
           <p>
