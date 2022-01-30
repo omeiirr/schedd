@@ -35,16 +35,16 @@ const Account = () => {
   const [isPwaInstalled] = useDetectPWA();
 
   useLayoutEffect(() => {
-    setAppVersion('0.1.0');
-    // axios
-    //   .get(`${process.env.NEXT_PUBLIC_GITHUB_API_URL}/repos/omeiirr/schedd/releases/latest`)
+    // setAppVersion('0.1.0');
+    axios
+      .get(`${process.env.NEXT_PUBLIC_GITHUB_API_URL}/repos/omeiirr/schedd/releases/latest`)
 
-    //   .then((res) => {
-    //     if (res.status === 200) {
-    //       setAppVersion(res.data.name);
-    //     }
-    //   })
-    //   .catch((err) => console.log(err.response));
+      .then((res) => {
+        if (res.status === 200) {
+          setAppVersion(res.data.name);
+        }
+      })
+      .catch((err) => console.log(err.response));
   }, []);
 
   const options = [
