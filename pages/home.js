@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 // Components
 import NavigationBar from 'components/NavigationBar/NavigationBar';
@@ -25,6 +26,8 @@ const Home = () => {
 
   const [scheduleUpdatedAt, setScheduleUpdatedAt] = useState(new Date());
   const [timeLapsed, setTimeLapsed] = useState(null);
+
+  const router = useRouter();
 
   const fetchDailySchedule = () => {
     setLectures([{}, {}, {}, {}, {}, {}]);
@@ -78,6 +81,9 @@ const Home = () => {
     });
   };
   useEffect(() => {
+    if (!localStorage.getItem('username') || !localStorage.getItem('password')) {
+      router.push('/login');
+    }
     fetchDailySchedule();
   }, []);
 
