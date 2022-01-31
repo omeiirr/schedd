@@ -57,7 +57,7 @@ const Login = () => {
       </Head>
 
       <div className='w-full h-screen bg-white'>
-        <Header title='Login' />
+        <Header title='Login' goBackTo='/' />
 
         <div className='px-4 py-8 mx-4 mt-16 bg-white border-2 border-gray-200 shadow-md rounded-xl '>
           <LogoText className='mx-auto fill-primary-600' width={140} />
