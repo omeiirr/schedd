@@ -22,7 +22,7 @@ const RandomAvatar = ({ setAvatar }) => {
   const [avatarCategory, setAvatarCategory] = useState('');
   const [avatarSeed, setAvatarSeed] = useState('');
   const [avatarLink, setAvatarLink] = useState(
-    `https://avatars.dicebear.com/api/${avatarCategory}/${avatarSeed}.svg?options[radius]=50`
+    'https://api.dicebear.com/7.x/${avatarCategory}/svg?seed=${avatarSeed}&radius=50'
   );
 
   const generateRandomSeed = () => {
@@ -38,13 +38,13 @@ const RandomAvatar = ({ setAvatar }) => {
 
   useEffect(() => {
     setAvatar(
-      `https://avatars.dicebear.com/api/${avatarCategory}/${avatarSeed}.svg?options[radius]=50`
+      'https://api.dicebear.com/7.x/${avatarCategory}/svg?seed=${avatarSeed}&radius=50'
+      
     );
     setAvatarLink(
-      `https://avatars.dicebear.com/api/${avatarCategory}/${avatarSeed}.svg?options[radius]=50`
+      'https://api.dicebear.com/7.x/${avatarCategory}/svg?seed=${avatarSeed}&radius=50'
     );
-    // Use multiple options like this:
-    // `https://avatars.dicebear.com/api/${avatarCategory}/${avatarSeed}.svg?options[radius]=50&options[dataUri]=true`
+
   }, [avatarCategory, avatarSeed]);
 
   return (
