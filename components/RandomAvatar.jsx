@@ -7,17 +7,30 @@ const RandomAvatar = ({ setAvatar }) => {
     // 'pixel-art-neutral',
     // 'croodles',
 
-    // Active
-    'avataaars',
-    'gridy',
-    'bottts',
     'adventurer',
     'adventurer-neutral',
+    'avataaars',
+    'avataaars-neutral',
+    'big-ears',
+    'big-ears-neutral',
+    'big-smile',
+    'bottts',
+    'bottts-neutral',
+    'croodles',
+    'croodles-neutral',
+    'fun-emoji',
+    'icons',
+    'identicon',
+    'lorelei',
+    'lorelei-neutral',
     'micah',
     'miniavs',
     'open-peeps',
     'personas',
-    'pixel-art'
+    'pixel-art',
+    'pixel-art-neutral',
+    'shapes',
+    'thumbs'
   ];
   const [avatarCategory, setAvatarCategory] = useState('');
   const [avatarSeed, setAvatarSeed] = useState('');
